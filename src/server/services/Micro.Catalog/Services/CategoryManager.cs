@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Micro.Catalog.Services
 {
-    public class CategoryManager 
+    public class CategoryManager : ICategoryService
     {
         private readonly IMongoCollection<Category> _categoryCollection;
         private readonly IMapper _mapper;
