@@ -1,3 +1,4 @@
+using Micro.Catalog.Services;
 using Micro.Catalog.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,6 +21,9 @@ namespace Micro.Catalog
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<ICourseService, CourseManager>();
+
             services.AddAutoMapper(c => c.AddMaps("Micro.Catalog"));
 
             services.AddControllers();
