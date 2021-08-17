@@ -16,7 +16,7 @@ namespace Micro.Catalog.Models
         public string Image { get; set; }
 
         [BsonRepresentation(MongoDB.Bson.BsonType.DateTime)]
-        public DateTime CreatedTime { get; set; }
+        public DateTime EditedTime { get; set; }
         public string UserId { get; set; }
 
         public Feature Feature { get; set; }
