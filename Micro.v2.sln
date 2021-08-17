@@ -9,9 +9,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{09EED9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{7514B39B-B785-4323-B18A-D1A993E01BA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Catalog", "src\server\services\Micro.Catalog\Micro.Catalog.csproj", "{5D86E1B2-6C72-4A66-8E85-CE895C89E760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Catalog", "src\server\services\Micro.Catalog\Micro.Catalog.csproj", "{5D86E1B2-6C72-4A66-8E85-CE895C89E760}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Micro.Shared", "src\server\Micro.Shared\Micro.Shared.shproj", "{208B2D9F-E130-4694-829D-F8BAD98C5DCB}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\server\Micro.Shared\Micro.Shared.projitems*{208b2d9f-e130-4694-829d-f8bad98c5dcb}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -29,6 +34,7 @@ Global
 		{09EED95C-23C1-484C-A10E-6E04978FC901} = {DF6B3209-9E55-463E-BC8A-18976EB16493}
 		{7514B39B-B785-4323-B18A-D1A993E01BA3} = {09EED95C-23C1-484C-A10E-6E04978FC901}
 		{5D86E1B2-6C72-4A66-8E85-CE895C89E760} = {7514B39B-B785-4323-B18A-D1A993E01BA3}
+		{208B2D9F-E130-4694-829D-F8BAD98C5DCB} = {09EED95C-23C1-484C-A10E-6E04978FC901}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F61AB8D7-509F-4146-A726-642801957F23}
