@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Micro.Shared.Controllers
 {
-    [Route("api/courses")]
     [ApiController]
     public class BaseController
     {
