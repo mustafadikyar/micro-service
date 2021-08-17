@@ -1,11 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31410.414
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DF6B3209-9E55-463E-BC8A-18976EB16493}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{09EED95C-23C1-484C-A10E-6E04978FC901}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{7514B39B-B785-4323-B18A-D1A993E01BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Catalog", "src\server\services\Micro.Catalog\Micro.Catalog.csproj", "{5D86E1B2-6C72-4A66-8E85-CE895C89E760}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D86E1B2-6C72-4A66-8E85-CE895C89E760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D86E1B2-6C72-4A66-8E85-CE895C89E760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D86E1B2-6C72-4A66-8E85-CE895C89E760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D86E1B2-6C72-4A66-8E85-CE895C89E760}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{09EED95C-23C1-484C-A10E-6E04978FC901} = {DF6B3209-9E55-463E-BC8A-18976EB16493}
+		{7514B39B-B785-4323-B18A-D1A993E01BA3} = {09EED95C-23C1-484C-A10E-6E04978FC901}
+		{5D86E1B2-6C72-4A66-8E85-CE895C89E760} = {7514B39B-B785-4323-B18A-D1A993E01BA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F61AB8D7-509F-4146-A726-642801957F23}
