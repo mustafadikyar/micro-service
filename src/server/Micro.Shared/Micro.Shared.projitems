@@ -9,6 +9,7 @@
     <Import_RootNamespace>Micro.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\BaseController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DTOs\ErrorDTO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DTOs\NoContent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DTOs\Response.cs" />
