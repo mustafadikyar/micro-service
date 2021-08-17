@@ -1,7 +1,11 @@
-﻿using System;
+﻿using AutoMapper;
+using AutoMapper.Configuration.Annotations;
+using Micro.Catalog.Models;
+using System;
 
 namespace Micro.Catalog.DTOs
 {
+    [AutoMap(typeof(Course), ReverseMap = true)]
     public class CourseDTO
     {        
         public string Name { get; set; }
@@ -10,6 +14,7 @@ namespace Micro.Catalog.DTOs
         public string Image { get; set; }
     }
 
+    [AutoMap(typeof(Course), ReverseMap = true)]
     public class CourseCreateDTO : CourseDTO
     {
         public DateTime EditedTime { get; set; }
@@ -18,8 +23,10 @@ namespace Micro.Catalog.DTOs
         public FeatureDTO Feature { get; set; }
     }
 
+    [AutoMap(typeof(Course), ReverseMap = true)]
     public class CourseUpdateDTO : CourseCreateDTO
     {
-        public string Id { get; set; }
+        [SourceMember(nameof(Course.Id))]
+        public string CourseId { get; set; }
     }
 }
