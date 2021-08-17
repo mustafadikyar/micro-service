@@ -1,8 +1,10 @@
+using Micro.Catalog.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 
 namespace Micro.Catalog
@@ -21,6 +23,10 @@ namespace Micro.Catalog
             services.AddAutoMapper(c => c.AddMaps("Micro.Catalog"));
 
             services.AddControllers();
+
+            services.Configure<DatabaseSetting>(Configuration.GetSection("DatabaseSetting"));
+            services.AddSingleton<IDatabaseSetting>(provider => provider.GetRequiredService<IOptions<DatabaseSetting>>().Value);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Micro.Catalog", Version = "v1" });
