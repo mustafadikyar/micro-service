@@ -7,13 +7,15 @@ namespace Micro.Catalog.DTOs
     [AutoMap(typeof(Category), ReverseMap = true)]
     public class CategoryDTO
     {       
+        [SourceMember(nameof(Category.Id))]
+        public string CategoryId { get; set; }
         public string Name { get; set; }
     }
 
     [AutoMap(typeof(Category), ReverseMap = true)]
-    public class CategoryCreateDTO : CategoryDTO
+    public class CategoryCreateDTO
     {
-
+        public string Name { get; set; }
     }
 
     [AutoMap(typeof(Category), ReverseMap = true)]

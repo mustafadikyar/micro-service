@@ -26,7 +26,7 @@ namespace Micro.Catalog.Controllers
             return CreateActionResultInstance(response);
         }
 
-        [Route("{userId}")]
+        [HttpGet("{userId}")]
         public async Task<IActionResult> GetAllByUserId(string userId)
         {
             var response = await _courseService.GetAllByUserIdAsync(userId);
