@@ -11,6 +11,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
   </ItemGroup>
 
-  <Import Project="..\..\Micro.Shared\Micro.Shared.projitems" Label="Shared" />
-
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Micro.IdentityServer\Micro.IdentityServer.csproj" />
+  </ItemGroup>
 </Project>
