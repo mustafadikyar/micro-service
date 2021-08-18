@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Catalog", "src\server
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Micro.Shared", "src\server\Micro.Shared\Micro.Shared.shproj", "{208B2D9F-E130-4694-829D-F8BAD98C5DCB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.IdentityServer", "src\server\Micro.IdentityServer\Micro.IdentityServer.csproj", "{F00F520F-8093-4199-B40F-63E0F3B4E840}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\server\Micro.Shared\Micro.Shared.projitems*{208b2d9f-e130-4694-829d-f8bad98c5dcb}*SharedItemsImports = 13
@@ -27,6 +29,10 @@ Global
 		{5D86E1B2-6C72-4A66-8E85-CE895C89E760}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D86E1B2-6C72-4A66-8E85-CE895C89E760}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D86E1B2-6C72-4A66-8E85-CE895C89E760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F00F520F-8093-4199-B40F-63E0F3B4E840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F00F520F-8093-4199-B40F-63E0F3B4E840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F00F520F-8093-4199-B40F-63E0F3B4E840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F00F520F-8093-4199-B40F-63E0F3B4E840}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 		{7514B39B-B785-4323-B18A-D1A993E01BA3} = {09EED95C-23C1-484C-A10E-6E04978FC901}
 		{5D86E1B2-6C72-4A66-8E85-CE895C89E760} = {7514B39B-B785-4323-B18A-D1A993E01BA3}
 		{208B2D9F-E130-4694-829D-F8BAD98C5DCB} = {09EED95C-23C1-484C-A10E-6E04978FC901}
+		{F00F520F-8093-4199-B40F-63E0F3B4E840} = {09EED95C-23C1-484C-A10E-6E04978FC901}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F61AB8D7-509F-4146-A726-642801957F23}
