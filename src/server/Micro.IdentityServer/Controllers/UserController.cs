@@ -2,20 +2,23 @@
 using Micro.IdentityServer.Models;
 using Micro.Shared.Controllers;
 using Micro.Shared.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
+using static IdentityServer4.IdentityServerConstants;
 
 namespace Micro.IdentityServer.Controllers
 {
+    [Authorize(LocalApi.PolicyName)]
     [Route("api/users")]
     public class UserController : BaseController
     {
         private readonly UserManager<ApplicationUser> _userManager;
         public UserController(UserManager<ApplicationUser> userManager) => _userManager = userManager;
 
-        [HttpPost]
+        [HttpPost("signup")]
         public async Task<IActionResult> SignUp(SignupDTO model)
         {
             var user = new ApplicationUser
