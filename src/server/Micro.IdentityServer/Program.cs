@@ -2,7 +2,11 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using Micro.IdentityServer.Data;
+using Micro.IdentityServer.Models;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -37,22 +41,22 @@ namespace Micro.IdentityServer
 
             try
             {
-                var seed = args.Contains("/seed");
-                if (seed)
-                {
-                    args = args.Except(new[] { "/seed" }).ToArray();
-                }
-
                 var host = CreateHostBuilder(args).Build();
-
-                if (seed)
+                using (var scope = host.Services.CreateScope())
                 {
-                    Log.Information("Seeding database...");
-                    var config = host.Services.GetRequiredService<IConfiguration>();
-                    var connectionString = config.GetConnectionString("DefaultConnection");
-                    SeedData.EnsureSeedData(connectionString);
-                    Log.Information("Done seeding database.");
-                    return 0;
+                    var provider = scope.ServiceProvider;
+                    var dbContext = provider.GetRequiredService<ApplicationDbContext>();
+                    dbContext.Database.Migrate();
+
+                    var userManager = provider.GetRequiredService<UserManager<ApplicationUser>>();
+                    if (!userManager.Users.Any())
+                    {
+                        userManager.CreateAsync(user: new ApplicationUser
+                        {
+                            UserName = "admin",
+                            Email = "mustafadikyar1@gmail.com",
+                        }, password: "123/()Asd").Wait();
+                    }
                 }
 
                 Log.Information("Starting host...");
