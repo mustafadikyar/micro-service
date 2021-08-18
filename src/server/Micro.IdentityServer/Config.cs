@@ -4,6 +4,7 @@
 
 using IdentityServer4;
 using IdentityServer4.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Micro.IdentityServer
@@ -18,9 +19,20 @@ namespace Micro.IdentityServer
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
+        //claims
         public static IEnumerable<IdentityResource> IdentityResources =>
         new IdentityResource[]
         {
+            new IdentityResources.Email(),
+            new IdentityResources.OpenId(),
+            new IdentityResources.Profile(),
+            new IdentityResource()
+            {
+                Name="roles",
+                DisplayName="Roles",
+                Description = "User Roles.",
+                UserClaims = new[] { "role" }
+            }
         };
 
         //permissions
@@ -36,7 +48,7 @@ namespace Micro.IdentityServer
         public static IEnumerable<Client> Clients =>
         new Client[]
         {
-            new Client
+            new Client  //standart user
             {
                 ClientName="standart",
                 ClientId="standart-id",
@@ -47,6 +59,25 @@ namespace Micro.IdentityServer
                     "photo_stock_fullpermission",
                     IdentityServerConstants.LocalApi.ScopeName
                 }
+            },
+            new Client //custom user
+            {
+                ClientName="custom",
+                ClientId="custom-id",
+                AllowOfflineAccess = true,
+                ClientSecrets= {new Secret("custom-secret".Sha256())},
+                AllowedGrantTypes= GrantTypes.ResourceOwnerPassword,                
+                AllowedScopes={ //Erişim izinleri
+                    IdentityServerConstants.StandardScopes.Email,
+                    IdentityServerConstants.StandardScopes.OpenId,
+                    IdentityServerConstants.StandardScopes.Profile,
+                    IdentityServerConstants.StandardScopes.OfflineAccess,    //refresh token
+                    "roles"
+                },
+                AccessTokenLifetime = 1*60*60,  //1 saat
+                RefreshTokenExpiration=TokenExpiration.Absolute,
+                AbsoluteRefreshTokenLifetime=(int)(DateTime.Now.AddDays(60) - DateTime.Now).TotalSeconds, // refresh token süresi
+                RefreshTokenUsage = TokenUsage.ReUse    //yeni token alınca refresh token yenilenecek.
             }
         };
     }
