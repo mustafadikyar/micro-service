@@ -1,6 +1,8 @@
 using Micro.Basket.Services;
 using Micro.Basket.Settings;
 using Micro.Shared.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -8,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace Micro.Basket
 {
@@ -23,6 +26,18 @@ namespace Micro.Basket
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region JWT
+            //policy : kullanýcý zorunlu - role, username, claim...
+            var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");//payload:sub - nameidentifier mapping ini iptal eder.
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.Authority = Configuration["IdentityServerURL"];
+                options.Audience = "resource_basket";
+                options.RequireHttpsMetadata = false;
+            });
+            #endregion
+
             services.AddHttpContextAccessor();
             services.AddScoped<ISharedIdentityService, SharedIdentityService>();
             services.Configure<RedisSettings>(Configuration.GetSection("RedisSettings"));
@@ -54,6 +69,8 @@ namespace Micro.Basket
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
