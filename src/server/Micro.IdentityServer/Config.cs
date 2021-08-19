@@ -19,6 +19,7 @@ namespace Micro.IdentityServer
             new ApiResource("resource_basket"){Scopes={"basket_fullpermission"}},
             new ApiResource("resource_discount"){Scopes={"discount_fullpermission"/*, "discount_readpermission", "discount_writepermission"*/}},
             new ApiResource("resource_order"){Scopes={"order_fullpermission"}},
+            new ApiResource("resource_payment"){Scopes={"payment_fullpermission"}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -49,6 +50,7 @@ namespace Micro.IdentityServer
             //new ApiScope("discount_readpermission","Discount api için okuma erişimi."),
             //new ApiScope("discount_writepermission","Discount api için yazma erişimi."),
             new ApiScope("order_fullpermission","order api için full erişim."),
+            new ApiScope("payment_fullpermission","payment api için full erişim."),
             new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -81,6 +83,7 @@ namespace Micro.IdentityServer
                     //"discount_readpermission",
                     //"discount_writepermission",
                     "order_fullpermission",
+                    "payment_fullpermission",
                     IdentityServerConstants.StandardScopes.Email,
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
