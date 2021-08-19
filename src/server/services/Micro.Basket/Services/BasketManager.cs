@@ -23,7 +23,7 @@ namespace Micro.Basket.Services
         {
             RedisValue isExist = await _redisService.GetDb().StringGetAsync(userId);
 
-            if (String.IsNullOrEmpty(isExist))
+            if (string.IsNullOrEmpty(isExist))
                 return Response<BasketDTO>.Error("Basket not found.", 404);
 
             return Response<BasketDTO>.Success(JsonSerializer.Deserialize<BasketDTO>(isExist), 200);

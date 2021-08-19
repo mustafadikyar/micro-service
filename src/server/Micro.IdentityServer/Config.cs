@@ -17,7 +17,7 @@ namespace Micro.IdentityServer
             new ApiResource("resource_catalog"){Scopes={"catalog_fullpermission"}},
             new ApiResource("resource_photo_stock"){Scopes={"photo_stock_fullpermission"}},
             new ApiResource("resource_basket"){Scopes={"basket_fullpermission"}},
-            new ApiResource("resource_discount"){Scopes={"discount_fullpermission"}},
+            new ApiResource("resource_discount"){Scopes={"discount_fullpermission"/*, "discount_readpermission", "discount_writepermission"*/}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -45,6 +45,8 @@ namespace Micro.IdentityServer
             new ApiScope("photo_stock_fullpermission","Photo Stock api için full erişim."),
             new ApiScope("basket_fullpermission","Basket api için full erişim."),
             new ApiScope("discount_fullpermission","discount api için full erişim."),
+            //new ApiScope("discount_readpermission","Discount api için okuma erişimi."),
+            //new ApiScope("discount_writepermission","Discount api için yazma erişimi."),
             new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -61,8 +63,6 @@ namespace Micro.IdentityServer
                 AllowedScopes={
                     "catalog_fullpermission",
                     "photo_stock_fullpermission",
-                    "basket_fullpermission",
-                    "discount_fullpermission",
                     IdentityServerConstants.LocalApi.ScopeName
                 }
             },
@@ -76,6 +76,8 @@ namespace Micro.IdentityServer
                 AllowedScopes={ //Erişim izinleri
                     "basket_fullpermission",
                     "discount_fullpermission",
+                    //"discount_readpermission",
+                    //"discount_writepermission",
                     IdentityServerConstants.StandardScopes.Email,
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
