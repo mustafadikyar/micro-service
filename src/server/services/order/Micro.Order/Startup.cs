@@ -1,3 +1,6 @@
+using MediatR;
+using Micro.Order.Application.Handlers;
+using Micro.Shared.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +28,12 @@ namespace Micro.Order
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), 
                     configure => configure.MigrationsAssembly("Micro.Order.Infrastructure"));
             });
+
+            services.AddHttpContextAccessor();
+            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+
+            //handler'ýn baðlý olduðu assembly
+            services.AddMediatR(typeof(CreateOrderCommandHandler).Assembly);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
