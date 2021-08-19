@@ -9,7 +9,7 @@ namespace Micro.Payment.Controllers
     public class PaymentController : BaseController
     {
         [HttpPost]
-        public IActionResult ReceivePayment(PaymentDTO paymentDto) => //payment operations
+        public IActionResult ReceivePayment(/*PaymentDTO paymentDto*/) => //payment operations
             CreateActionResultInstance(Response<NoContent>.Success(200));
     }
 }
