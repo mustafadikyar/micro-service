@@ -41,12 +41,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Order.Domain.Core", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Order.Infrastructure", "src\server\services\order\Micro.Order.Infrastructure\Micro.Order.Infrastructure.csproj", "{A98865E0-9D2C-477B-8E46-2364F0FD8D5F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "payment", "payment", "{4AA1DA7A-100B-4EBF-B18B-FD545F5F27C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Payment", "src\server\services\payment\Micro.Payment\Micro.Payment.csproj", "{ACED74FB-22AB-458D-A851-5D8F9D94DE00}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\server\Micro.Shared\Micro.Shared.projitems*{208b2d9f-e130-4694-829d-f8bad98c5dcb}*SharedItemsImports = 13
 		src\server\Micro.Shared\Micro.Shared.projitems*{2bbcdb8c-3a76-4914-a56f-2eeb3e3e7559}*SharedItemsImports = 5
 		src\server\Micro.Shared\Micro.Shared.projitems*{30405137-751e-44b3-80fe-81b1b48586d8}*SharedItemsImports = 5
 		src\server\Micro.Shared\Micro.Shared.projitems*{60c68ea0-3ed9-4ed9-9f0b-dbf5ed673852}*SharedItemsImports = 5
+		src\server\Micro.Shared\Micro.Shared.projitems*{aced74fb-22ab-458d-a851-5d8f9d94de00}*SharedItemsImports = 5
 		src\server\Micro.Shared\Micro.Shared.projitems*{bd83bbdd-b5fe-433d-aa5b-7091bc3a086e}*SharedItemsImports = 5
 		src\server\Micro.Shared\Micro.Shared.projitems*{eb0dbb1c-c7b7-4d13-ac6e-355007219b5e}*SharedItemsImports = 5
 		src\server\Micro.Shared\Micro.Shared.projitems*{f00f520f-8093-4199-b40f-63e0f3b4e840}*SharedItemsImports = 5
@@ -96,6 +101,10 @@ Global
 		{A98865E0-9D2C-477B-8E46-2364F0FD8D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A98865E0-9D2C-477B-8E46-2364F0FD8D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A98865E0-9D2C-477B-8E46-2364F0FD8D5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACED74FB-22AB-458D-A851-5D8F9D94DE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACED74FB-22AB-458D-A851-5D8F9D94DE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACED74FB-22AB-458D-A851-5D8F9D94DE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACED74FB-22AB-458D-A851-5D8F9D94DE00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +128,8 @@ Global
 		{6AD629BE-19ED-4FA2-A061-F3D49E1F7F62} = {2AB94811-73FE-4375-B8C7-E12EA26CFFB1}
 		{BF979DC7-DA22-4B67-850B-9B39D3384641} = {2AB94811-73FE-4375-B8C7-E12EA26CFFB1}
 		{A98865E0-9D2C-477B-8E46-2364F0FD8D5F} = {2AB94811-73FE-4375-B8C7-E12EA26CFFB1}
+		{4AA1DA7A-100B-4EBF-B18B-FD545F5F27C3} = {7514B39B-B785-4323-B18A-D1A993E01BA3}
+		{ACED74FB-22AB-458D-A851-5D8F9D94DE00} = {4AA1DA7A-100B-4EBF-B18B-FD545F5F27C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F61AB8D7-509F-4146-A726-642801957F23}
