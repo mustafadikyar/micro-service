@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "catalog", "catalog", "{FB48
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Catalog", "src\server\services\catalog\Micro.Catalog\Micro.Catalog.csproj", "{BD83BBDD-B5FE-433D-AA5B-7091BC3A086E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "photostock", "photostock", "{BB81FB26-EDB5-41C9-92D1-5668B0E7228B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Photostock", "src\server\services\Micro.Photostock\Micro.Photostock.csproj", "{40EDE385-F465-428D-A0B2-CBBB1C6DAF69}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\server\Micro.Shared\Micro.Shared.projitems*{208b2d9f-e130-4694-829d-f8bad98c5dcb}*SharedItemsImports = 13
@@ -35,6 +39,10 @@ Global
 		{BD83BBDD-B5FE-433D-AA5B-7091BC3A086E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD83BBDD-B5FE-433D-AA5B-7091BC3A086E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD83BBDD-B5FE-433D-AA5B-7091BC3A086E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40EDE385-F465-428D-A0B2-CBBB1C6DAF69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40EDE385-F465-428D-A0B2-CBBB1C6DAF69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40EDE385-F465-428D-A0B2-CBBB1C6DAF69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40EDE385-F465-428D-A0B2-CBBB1C6DAF69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +54,8 @@ Global
 		{F00F520F-8093-4199-B40F-63E0F3B4E840} = {09EED95C-23C1-484C-A10E-6E04978FC901}
 		{FB4884D6-464A-45D7-9C8A-0C816EB492BA} = {7514B39B-B785-4323-B18A-D1A993E01BA3}
 		{BD83BBDD-B5FE-433D-AA5B-7091BC3A086E} = {FB4884D6-464A-45D7-9C8A-0C816EB492BA}
+		{BB81FB26-EDB5-41C9-92D1-5668B0E7228B} = {7514B39B-B785-4323-B18A-D1A993E01BA3}
+		{40EDE385-F465-428D-A0B2-CBBB1C6DAF69} = {BB81FB26-EDB5-41C9-92D1-5668B0E7228B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F61AB8D7-509F-4146-A726-642801957F23}

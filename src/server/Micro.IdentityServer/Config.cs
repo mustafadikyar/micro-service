@@ -72,6 +72,7 @@ namespace Micro.IdentityServer
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
                     IdentityServerConstants.StandardScopes.OfflineAccess,    //refresh token
+                    IdentityServerConstants.LocalApi.ScopeName,
                     "roles"
                 },
                 AccessTokenLifetime = 1*60*60,  //1 saat
