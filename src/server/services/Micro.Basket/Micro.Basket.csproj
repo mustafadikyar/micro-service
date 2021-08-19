@@ -13,4 +13,6 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <Import Project="..\..\Micro.Shared\Micro.Shared.projitems" Label="Shared" />
+
 </Project>
