@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Micro.Order.Domain\Micro.Order.Domain.csproj" />
     <ProjectReference Include="..\Micro.Order.Infrastructure\Micro.Order.Infrastructure.csproj" />
   </ItemGroup>
 
