@@ -31,23 +31,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Discount", "src\serve
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Photostock", "src\server\services\photostock\Micro.Photostock\Micro.Photostock.csproj", "{60C68EA0-3ED9-4ED9-9F0B-DBF5ED673852}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Order", "src\server\services\order\Micro.Order\Micro.Order.csproj", "{B12BEB54-B19B-4923-909E-774188EC6811}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Order", "src\server\services\order\Micro.Order\Micro.Order.csproj", "{B12BEB54-B19B-4923-909E-774188EC6811}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Order.Application", "src\server\services\order\Micro.Order.Application\Micro.Order.Application.csproj", "{2BBCDB8C-3A76-4914-A56F-2EEB3E3E7559}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Order.Application", "src\server\services\order\Micro.Order.Application\Micro.Order.Application.csproj", "{2BBCDB8C-3A76-4914-A56F-2EEB3E3E7559}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Order.Domain", "src\server\services\order\Micro.Order.Domain\Micro.Order.Domain.csproj", "{6AD629BE-19ED-4FA2-A061-F3D49E1F7F62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Order.Domain", "src\server\services\order\Micro.Order.Domain\Micro.Order.Domain.csproj", "{6AD629BE-19ED-4FA2-A061-F3D49E1F7F62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Order.Domain.Core", "src\server\services\order\Micro.Order.Domain.Core\Micro.Order.Domain.Core.csproj", "{BF979DC7-DA22-4B67-850B-9B39D3384641}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Order.Domain.Core", "src\server\services\order\Micro.Order.Domain.Core\Micro.Order.Domain.Core.csproj", "{BF979DC7-DA22-4B67-850B-9B39D3384641}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Order.Infrastructure", "src\server\services\order\Micro.Order.Infrastructure\Micro.Order.Infrastructure.csproj", "{A98865E0-9D2C-477B-8E46-2364F0FD8D5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Order.Infrastructure", "src\server\services\order\Micro.Order.Infrastructure\Micro.Order.Infrastructure.csproj", "{A98865E0-9D2C-477B-8E46-2364F0FD8D5F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "payment", "payment", "{4AA1DA7A-100B-4EBF-B18B-FD545F5F27C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Payment", "src\server\services\payment\Micro.Payment\Micro.Payment.csproj", "{ACED74FB-22AB-458D-A851-5D8F9D94DE00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Payment", "src\server\services\payment\Micro.Payment\Micro.Payment.csproj", "{ACED74FB-22AB-458D-A851-5D8F9D94DE00}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateway", "gateway", "{0D4A0CAA-B6CF-4676-956C-FED883BB0A78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Gateway", "src\gateway\Micro.Gateway\Micro.Gateway.csproj", "{6ED11AD6-3566-495C-981E-13DB0E797FBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Gateway", "src\gateway\Micro.Gateway\Micro.Gateway.csproj", "{6ED11AD6-3566-495C-981E-13DB0E797FBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{F4117856-45D8-490E-B9F1-71355AA0745C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{C5A2E5A3-0855-4A3B-B585-DE1497591494}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.WebUI", "src\client\web\Micro.WebUI\Micro.WebUI.csproj", "{06409697-0514-4D62-A35E-3650AC82BFBA}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -113,6 +119,10 @@ Global
 		{6ED11AD6-3566-495C-981E-13DB0E797FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ED11AD6-3566-495C-981E-13DB0E797FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ED11AD6-3566-495C-981E-13DB0E797FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06409697-0514-4D62-A35E-3650AC82BFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06409697-0514-4D62-A35E-3650AC82BFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06409697-0514-4D62-A35E-3650AC82BFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06409697-0514-4D62-A35E-3650AC82BFBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,6 +150,9 @@ Global
 		{ACED74FB-22AB-458D-A851-5D8F9D94DE00} = {4AA1DA7A-100B-4EBF-B18B-FD545F5F27C3}
 		{0D4A0CAA-B6CF-4676-956C-FED883BB0A78} = {DF6B3209-9E55-463E-BC8A-18976EB16493}
 		{6ED11AD6-3566-495C-981E-13DB0E797FBC} = {0D4A0CAA-B6CF-4676-956C-FED883BB0A78}
+		{F4117856-45D8-490E-B9F1-71355AA0745C} = {DF6B3209-9E55-463E-BC8A-18976EB16493}
+		{C5A2E5A3-0855-4A3B-B585-DE1497591494} = {F4117856-45D8-490E-B9F1-71355AA0745C}
+		{06409697-0514-4D62-A35E-3650AC82BFBA} = {C5A2E5A3-0855-4A3B-B585-DE1497591494}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F61AB8D7-509F-4146-A726-642801957F23}
