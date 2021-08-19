@@ -20,7 +20,7 @@ namespace Micro.Basket.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetBasket()
+        public async Task<IActionResult> Get()
         {
             return CreateActionResultInstance(await _basketService.Get(_sharedIdentityService.GetUserId));
         }
@@ -35,7 +35,7 @@ namespace Micro.Basket.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeleteBasket()
+        public async Task<IActionResult> Delete()
         {
             return CreateActionResultInstance(await _basketService.Delete(_sharedIdentityService.GetUserId));
         }
