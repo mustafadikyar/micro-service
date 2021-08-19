@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Micro.Order.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/orders")]
     public class OrderController : BaseController
     {
         private readonly IMediator _mediator;
