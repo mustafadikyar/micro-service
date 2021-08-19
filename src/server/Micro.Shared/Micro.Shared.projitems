@@ -13,5 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)DTOs\ErrorDTO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DTOs\NoContent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DTOs\Response.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ISharedIdentityService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\SharedIdentityService.cs" />
   </ItemGroup>
 </Project>
