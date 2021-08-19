@@ -11,6 +11,5 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.12.1" />
   </ItemGroup>
 
-  <Import Project="..\..\Micro.Shared\Micro.Shared.projitems" Label="Shared" />
-
+  <Import Project="..\..\..\Micro.Shared\Micro.Shared.projitems" Label="Shared" />
 </Project>

@@ -14,7 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Micro.IdentityServer\Micro.IdentityServer.csproj" />
+    <ProjectReference Include="..\..\..\Micro.IdentityServer\Micro.IdentityServer.csproj" />
   </ItemGroup>
+
+  <Import Project="..\..\..\Micro.Shared\Micro.Shared.projitems" Label="Shared" />
 
 </Project>
