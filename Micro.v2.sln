@@ -44,6 +44,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\server\Micro.Shared\Micro.Shared.projitems*{208b2d9f-e130-4694-829d-f8bad98c5dcb}*SharedItemsImports = 13
+		src\server\Micro.Shared\Micro.Shared.projitems*{2bbcdb8c-3a76-4914-a56f-2eeb3e3e7559}*SharedItemsImports = 5
 		src\server\Micro.Shared\Micro.Shared.projitems*{30405137-751e-44b3-80fe-81b1b48586d8}*SharedItemsImports = 5
 		src\server\Micro.Shared\Micro.Shared.projitems*{60c68ea0-3ed9-4ed9-9f0b-dbf5ed673852}*SharedItemsImports = 5
 		src\server\Micro.Shared\Micro.Shared.projitems*{bd83bbdd-b5fe-433d-aa5b-7091bc3a086e}*SharedItemsImports = 5
