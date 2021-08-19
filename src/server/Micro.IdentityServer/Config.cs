@@ -17,6 +17,7 @@ namespace Micro.IdentityServer
             new ApiResource("resource_catalog"){Scopes={"catalog_fullpermission"}},
             new ApiResource("resource_photo_stock"){Scopes={"photo_stock_fullpermission"}},
             new ApiResource("resource_basket"){Scopes={"basket_fullpermission"}},
+            new ApiResource("resource_discount"){Scopes={"discount_fullpermission"}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -43,6 +44,7 @@ namespace Micro.IdentityServer
             new ApiScope("catalog_fullpermission","Catalog api için full erişim."),
             new ApiScope("photo_stock_fullpermission","Photo Stock api için full erişim."),
             new ApiScope("basket_fullpermission","Basket api için full erişim."),
+            new ApiScope("discount_fullpermission","discount api için full erişim."),
             new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -60,6 +62,7 @@ namespace Micro.IdentityServer
                     "catalog_fullpermission",
                     "photo_stock_fullpermission",
                     "basket_fullpermission",
+                    "discount_fullpermission",
                     IdentityServerConstants.LocalApi.ScopeName
                 }
             },
@@ -72,6 +75,7 @@ namespace Micro.IdentityServer
                 AllowedGrantTypes= GrantTypes.ResourceOwnerPassword,                
                 AllowedScopes={ //Erişim izinleri
                     "basket_fullpermission",
+                    "discount_fullpermission",
                     IdentityServerConstants.StandardScopes.Email,
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
