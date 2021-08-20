@@ -122,9 +122,10 @@ namespace Micro.WebUI.Services
 
             if (token.IsError)
             {
-                string responseContent = await token.HttpResponse.Content.ReadAsStringAsync();
-                ErrorDTO errorDto = JsonSerializer.Deserialize<ErrorDTO>(responseContent, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                return Response<bool>.Error(errorDto.Errors, 400);
+                var response = await token.HttpResponse.Content.ReadAsStringAsync();
+                var error = JsonSerializer.Deserialize<ErrorDTO>(response, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                return Response<bool>.Error(error.Errors, 400);
             }
 
             UserInfoResponse userInfo = await _httpClient.GetUserInfoAsync(new UserInfoRequest
