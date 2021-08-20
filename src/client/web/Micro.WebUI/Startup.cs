@@ -1,3 +1,4 @@
+using Micro.WebUI.Handlers;
 using Micro.WebUI.Models;
 using Micro.WebUI.Services;
 using Micro.WebUI.Services.Abstract;
@@ -27,9 +28,8 @@ namespace Micro.WebUI
 
             services.AddHttpContextAccessor();
             services.AddHttpClient<IIdentityService, IdentityManager>();
-            services.AddHttpClient<IUserService, UserManager>(option => 
-                option.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri) 
-            );
+            services.AddHttpClient<IUserService, UserManager>(option =>  option.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri))
+                    .AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
             services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
