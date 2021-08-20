@@ -32,6 +32,10 @@ namespace Micro.WebUI.Services
             _serviceApiSettings = serviceApiSettings.Value;
         }
 
+        /// <summary>
+        /// Access Token süresi dolunca refreshtoken ile yeni bir token oluşturur.
+        /// </summary>
+        /// <returns></returns>
         public async Task<TokenResponse> GetAccessTokenByRefreshToken()
         {
             DiscoveryDocumentResponse disco = await _httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
@@ -74,6 +78,10 @@ namespace Micro.WebUI.Services
             return token;
         }
 
+        /// <summary>
+        /// Kullanıcı çıkış yapınca refresh token'ı memory'den siler.
+        /// </summary>
+        /// <returns></returns>
         public async Task RevokeRefreshToken()
         {
             DiscoveryDocumentResponse disco = await _httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
