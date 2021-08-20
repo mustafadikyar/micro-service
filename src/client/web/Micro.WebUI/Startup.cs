@@ -23,8 +23,14 @@ namespace Micro.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ServiceApiSettings serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
+
             services.AddHttpContextAccessor();
             services.AddHttpClient<IIdentityService, IdentityManager>();
+            services.AddHttpClient<IUserService, UserManager>(option => 
+                option.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri) 
+            );
+
             services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
 
