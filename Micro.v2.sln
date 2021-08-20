@@ -57,6 +57,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.WebUI", "src\client\w
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\server\Micro.Shared\Micro.Shared.projitems*{06409697-0514-4d62-a35e-3650ac82bfba}*SharedItemsImports = 5
 		src\server\Micro.Shared\Micro.Shared.projitems*{208b2d9f-e130-4694-829d-f8bad98c5dcb}*SharedItemsImports = 13
 		src\server\Micro.Shared\Micro.Shared.projitems*{2bbcdb8c-3a76-4914-a56f-2eeb3e3e7559}*SharedItemsImports = 5
 		src\server\Micro.Shared\Micro.Shared.projitems*{30405137-751e-44b3-80fe-81b1b48586d8}*SharedItemsImports = 5
