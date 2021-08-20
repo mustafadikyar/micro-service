@@ -1,5 +1,7 @@
 ﻿using Micro.WebUI.Models;
 using Micro.WebUI.Services.Abstract;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -28,6 +30,13 @@ namespace Micro.WebUI.Controllers
                 return View();
             }
             return RedirectToAction(nameof(Index), "Home");
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme); //cookie temizler.
+            await _identityService.RevokeRefreshToken(); //refresh token siler.
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
     }
 }
