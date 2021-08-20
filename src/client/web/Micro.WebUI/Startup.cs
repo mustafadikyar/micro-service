@@ -28,6 +28,8 @@ namespace Micro.WebUI
 
             services.AddHttpContextAccessor();
             services.AddHttpClient<IIdentityService, IdentityManager>();
+
+            services.AddScoped<ResourceOwnerPasswordTokenHandler>();
             services.AddHttpClient<IUserService, UserManager>(option =>  option.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri))
                     .AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
