@@ -30,11 +30,14 @@ namespace Micro.WebUI
             services.AddHttpClient<IIdentityService, IdentityManager>();
 
             services.AddScoped<ResourceOwnerPasswordTokenHandler>();
-            services.AddHttpClient<IUserService, UserManager>(option =>  option.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri))
+            services.AddHttpClient<IUserService, UserManager>(option => option.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri))
                     .AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
-            services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
-            services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
+            services.AddHttpClient<ICatalogService, CatalogManager>(option =>
+            {
+                option.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.Catalog.Path}"); 
+                services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
+            }).AddHttpMessageHandler<ClientCredentialTokenHandler>(); services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, option =>
