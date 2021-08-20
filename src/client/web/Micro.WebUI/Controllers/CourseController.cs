@@ -26,6 +26,7 @@ namespace Micro.WebUI.Controllers
             return View(response);
         }
 
+        [HttpGet]
         public async Task<IActionResult> Create()
         {
             var categories = await _catalogService.GetAllCategoryAsync();
@@ -47,6 +48,7 @@ namespace Micro.WebUI.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpGet]
         public async Task<IActionResult> Update(string id)
         {
             var Cource = await _catalogService.GetByCourseId(id);

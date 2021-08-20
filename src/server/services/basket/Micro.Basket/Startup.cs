@@ -40,7 +40,7 @@ namespace Micro.Basket
             #endregion
 
             services.AddHttpContextAccessor();
-            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+            services.AddScoped<ISharedIdentityService, SharedIdentityManager>();
             services.AddScoped<IBasketService, BasketManager>();
             services.Configure<RedisSettings>(Configuration.GetSection("RedisSettings"));
 
