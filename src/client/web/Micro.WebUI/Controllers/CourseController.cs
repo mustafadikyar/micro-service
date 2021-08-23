@@ -22,7 +22,7 @@ namespace Micro.WebUI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var response = await _catalogService.GetAllCourseByUserIdAsync(_sharedIdentityService.GetUserId);
+            System.Collections.Generic.List<CourseViewModel> response = await _catalogService.GetAllCourseByUserIdAsync(_sharedIdentityService.GetUserId);
             return View(response);
         }
 
@@ -35,7 +35,7 @@ namespace Micro.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CourseCreateInput CourceCreateInput)
+        public async Task<IActionResult> Create(CourseCreateInput model)
         {
             var categories = await _catalogService.GetAllCategoryAsync();
             ViewBag.categoryList = new SelectList(categories, "Id", "Name");
@@ -43,8 +43,8 @@ namespace Micro.WebUI.Controllers
             if (!ModelState.IsValid)
                 return View();
 
-            CourceCreateInput.UserId = _sharedIdentityService.GetUserId;
-            await _catalogService.CreateCourseAsync(CourceCreateInput);
+            model.UserId = _sharedIdentityService.GetUserId;
+            await _catalogService.CreateCourseAsync(model);
             return RedirectToAction(nameof(Index));
         }
 
@@ -59,10 +59,10 @@ namespace Micro.WebUI.Controllers
                 //mesaj göster
                 RedirectToAction(nameof(Index));
             }
-            ViewBag.categoryList = new SelectList(categories, "Id", "Name", Cource.Id);
+            ViewBag.categoryList = new SelectList(categories, "Id", "Name", Cource.CourseId);
             CourseUpdateInput CourceUpdateInput = new()
             {
-                Id = Cource.Id,
+                Id = Cource.CourseId,
                 Name = Cource.Name,
                 Description = Cource.Description,
                 Price = Cource.Price,
@@ -76,15 +76,15 @@ namespace Micro.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(CourseUpdateInput CourceUpdateInput)
+        public async Task<IActionResult> Update(CourseUpdateInput model)
         {
             var categories = await _catalogService.GetAllCategoryAsync();
-            ViewBag.categoryList = new SelectList(categories, "Id", "Name", CourceUpdateInput.Id);
+            ViewBag.categoryList = new SelectList(categories, "Id", "Name", model.Id);
 
             if (!ModelState.IsValid)
                 return View();
 
-            await _catalogService.UpdateCourseAsync(CourceUpdateInput);
+            await _catalogService.UpdateCourseAsync(model);
             return RedirectToAction(nameof(Index));
         }
 

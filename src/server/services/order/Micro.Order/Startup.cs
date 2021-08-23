@@ -44,7 +44,7 @@ namespace Micro.Order
             });
 
             services.AddHttpContextAccessor();
-            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+            services.AddScoped<ISharedIdentityService, SharedIdentityManager>();
 
             //handler'ýn baðlý olduðu assembly
             services.AddMediatR(typeof(CreateOrderCommandHandler).Assembly);

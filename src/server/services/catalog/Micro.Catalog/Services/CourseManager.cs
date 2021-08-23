@@ -36,7 +36,7 @@ namespace Micro.Catalog.Services
             {
                 courses.ForEach(async course =>
                 {
-                    course.Category = await _categoryCollection.Find<Category>(category => category.Id == course.CategoryId).FirstAsync();
+                    course.Category = await _categoryCollection.Find<Category>(category => category.Id == course.CategoryId).FirstOrDefaultAsync();
                 });
             }
             else

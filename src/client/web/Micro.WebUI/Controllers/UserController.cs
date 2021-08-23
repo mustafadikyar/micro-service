@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 namespace Micro.WebUI.Controllers
 {
+
     public class UserController : Controller
     {
         private readonly IUserService _userService;

@@ -26,7 +26,7 @@ namespace Micro.Discount
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpContextAccessor();
-            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+            services.AddScoped<ISharedIdentityService, SharedIdentityManager>();
             services.AddScoped<IDiscountService, DiscountManager>();
             var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build(); //-
             //var customPolicy = new AuthorizationPolicyBuilder().RequireClaim("claim", "discount_readpermission").Build();
