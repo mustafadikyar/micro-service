@@ -1,10 +1,11 @@
 ﻿using Micro.WebUI.Services.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace Micro.WebUI.Controllers
 {
-
+    [Authorize]
     public class UserController : Controller
     {
         private readonly IUserService _userService;
