@@ -5,7 +5,7 @@ namespace Micro.WebUI.Models.Catalog
 {
     public class CourseUpdateInput
     {
-        public string Id { get; set; }
+        public string CourseId { get; set; }
 
         [Display(Name = "Kurs ismi")]
         public string Name { get; set; }

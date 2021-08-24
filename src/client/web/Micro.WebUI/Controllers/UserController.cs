@@ -14,7 +14,8 @@ namespace Micro.WebUI.Controllers
         public async Task<IActionResult> Index()
         {
             //IdentityServer/Accounts/Get
-            return View(await _userService.GetUser());
+            var user = await _userService.GetUser();
+            return View(user);
         }
     }
 }

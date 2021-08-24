@@ -22,7 +22,7 @@ namespace Micro.WebUI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            System.Collections.Generic.List<CourseViewModel> response = await _catalogService.GetAllCourseByUserIdAsync(_sharedIdentityService.GetUserId);
+            var response = await _catalogService.GetAllCourseByUserIdAsync(_sharedIdentityService.GetUserId);
             return View(response);
         }
 
@@ -51,35 +51,35 @@ namespace Micro.WebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(string id)
         {
-            var Cource = await _catalogService.GetByCourseId(id);
+            var course = await _catalogService.GetById(id);
             var categories = await _catalogService.GetAllCategoryAsync();
 
-            if (Cource == null)
+            if (course == null)
             {
-                //mesaj göster
+                //uyarı mesajı göster
                 RedirectToAction(nameof(Index));
             }
-            ViewBag.categoryList = new SelectList(categories, "Id", "Name", Cource.CourseId);
-            CourseUpdateInput CourceUpdateInput = new()
+            ViewBag.categoryList = new SelectList(categories, "Id", "Name", course.CourseId);
+            CourseUpdateInput CourseUpdateInput = new()
             {
-                Id = Cource.CourseId,
-                Name = Cource.Name,
-                Description = Cource.Description,
-                Price = Cource.Price,
-                Feature = Cource.Feature,
-                CategoryId = Cource.CategoryId,
-                UserId = Cource.UserId,
-                Image = Cource.Image
+                CourseId = course.CourseId,
+                Name = course.Name,
+                Description = course.Description,
+                Price = course.Price,
+                Feature = course.Feature,
+                CategoryId = course.CategoryId,
+                UserId = course.UserId,
+                Image = course.Image
             };
 
-            return View(CourceUpdateInput);
+            return View(CourseUpdateInput);
         }
 
         [HttpPost]
         public async Task<IActionResult> Update(CourseUpdateInput model)
         {
             var categories = await _catalogService.GetAllCategoryAsync();
-            ViewBag.categoryList = new SelectList(categories, "Id", "Name", model.Id);
+            ViewBag.categoryList = new SelectList(categories, "Id", "Name", model.CourseId);
 
             if (!ModelState.IsValid)
                 return View();

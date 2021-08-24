@@ -19,7 +19,7 @@ namespace Micro.Catalog.Controllers
             return CreateActionResultInstance(response);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("get-single/{id}")]
         public async Task<IActionResult> GetById(string id)
         {
             var response = await _courseService.GetByIdAsync(id);

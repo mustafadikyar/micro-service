@@ -7,11 +7,12 @@
             <div class="card-body">
                 <h5 class="card-title">Kurs güncelleme </h5>
 
-                <form asp-controller="Cource" asp-action="Update" method="post" enctype="multipart/form-data">
+                <form asp-controller="Course" asp-action="Update" method="post" enctype="multipart/form-data">
                     <div asp-validation-summary="ModelOnly"></div>
-                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="CourseId" />
                     <input type="hidden" asp-for="UserId" />
                     <input type="hidden" asp-for="Image" />
+                    <input type="hidden" asp-for="CategoryId" />
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label" asp-for="CategoryId"></label>
                         <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.categoryList">

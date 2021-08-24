@@ -12,7 +12,7 @@ namespace Micro.WebUI.Services.Abstract
 
         Task<List<CourseViewModel>> GetAllCourseByUserIdAsync(string userId);
 
-        Task<CourseViewModel> GetByCourseId(string courseId);
+        Task<CourseViewModel> GetById(string id);
 
         Task<bool> CreateCourseAsync(CourseCreateInput model);
 

@@ -2,6 +2,7 @@
 using Micro.WebUI.Helpers;
 using Micro.WebUI.Models.Catalog;
 using Micro.WebUI.Services.Abstract;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -51,7 +52,7 @@ namespace Micro.WebUI.Services
 
         public async Task<List<CourseViewModel>> GetAllCourseAsync()
         {
-            //http:localhost:5000/services/catalog/courses
+            //https:localhost:5000/services/catalogs/courses
             var response = await _client.GetAsync("courses");
             if (!response.IsSuccessStatusCode)
                 return null;
@@ -67,7 +68,6 @@ namespace Micro.WebUI.Services
         public async Task<List<CourseViewModel>> GetAllCourseByUserIdAsync(string userId)
         {
             //courses/GetAllByUserId/{userId}
-
             var response = await _client.GetAsync($"courses?userId={userId}");
             if (!response.IsSuccessStatusCode)
                 return null;
@@ -81,9 +81,14 @@ namespace Micro.WebUI.Services
             return responseSuccess.Data;
         }
 
-        public async Task<CourseViewModel> GetByCourseId(string courseId)
+        public async Task<CourseViewModel> GetById(string id)
         {
-            var response = await _client.GetAsync($"courses/{courseId}");
+            //var json = await _client.GetStringAsync($"courses/get-single/{id}");
+            //var result = JsonConvert.DeserializeObject<Response<CourseViewModel>>(json);
+
+            //return result.Data;
+
+            var response = await _client.GetAsync($"courses/get-single/{id}");
             if (!response.IsSuccessStatusCode)
                 return null;
 
